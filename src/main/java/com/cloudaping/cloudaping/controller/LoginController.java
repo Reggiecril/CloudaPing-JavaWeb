@@ -32,12 +32,12 @@ public class LoginController {
 
 
     @GetMapping(path = "login")
-    public String getLogin(Map<String, Object> map,HttpSession session){
+    public String getLogin(HttpSession session){
 
 
         if (session.getAttributeNames().hasMoreElements()){
 
-            return "redirect:../index";
+            return "redirect:"+PATH_USER;
         }
         return PATH_LOGIN;
     }
@@ -75,7 +75,11 @@ public class LoginController {
         return "redirect:"+PATH_USER;
     }
     @GetMapping("signup")
-    public String goSignup(Map<String, Object> map){
+    public String goSignup(HttpSession session){
+        if (session.getAttributeNames().hasMoreElements()){
+
+            return "redirect:"+PATH_USER;
+        }
         return PATH_SIGNUP;
     }
     @PostMapping("signup")

@@ -3,6 +3,7 @@ package com.cloudaping.cloudaping.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class User implements Serializable {
@@ -11,6 +12,10 @@ public class User implements Serializable {
     private String email;
     private String username;
     private String password;
+    private String realName;
+    private Long phone;
+    private Date birthday;
+    private Integer gender;
 
     public User() {
     }
@@ -54,6 +59,38 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -61,6 +98,10 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", realName='" + realName + '\'' +
+                ", phone=" + phone +
+                ", birthday=" + birthday +
+                ", gender=" + gender +
                 '}';
     }
 }

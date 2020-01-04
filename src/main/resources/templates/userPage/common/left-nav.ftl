@@ -1,7 +1,7 @@
 <!-- Sidebar Holder -->
 <nav id="sidebar">
     <div class="sidebar-header">
-        <img src="${path}/images/log1.jpg" width="200px" height="80px">
+        <a href="../index"> <img src="${path}/images/log1.jpg" width="200px" height="80px"></a>
     </div>
 
     <ul class="list-unstyled components">
