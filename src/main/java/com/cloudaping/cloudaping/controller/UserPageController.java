@@ -1,10 +1,16 @@
 package com.cloudaping.cloudaping.controller;
 
+import com.cloudaping.cloudaping.entity.User;
+import com.cloudaping.cloudaping.service.LoginService;
+import freemarker.template.utility.DateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -17,13 +23,28 @@ public class UserPageController {
     private static final String PAYMENT_PATH = USERPAGE_PATH + "/payment";
     private static final String FAVOURITE_PATH = USERPAGE_PATH + "/favourite";
     private static final String PASSWORD_CHANGE_PATH = USERPAGE_PATH + "/password_change";
-
-
+@Autowired
+    private LoginService loginService;
     @GetMapping(path = "information")
-    public String getInformation() {
+    public String getInformation(HttpSession session,
+                                 Map<String,Object> map) {
+        User user= (User) session.getAttribute("user");
+        map.put("userInformation",user);
         return INFORMATION_PATH;
     }
 
+    @PostMapping(path = "information")
+    public String editInformation(HttpSession session,
+                                  @Valid User user,
+                                  Map<String,Object> map) {
+        User exsitsUser= (User) session.getAttribute("user");
+        user.setUserId(exsitsUser.getUserId());
+        user.setPassword(exsitsUser.getPassword());
+        session.setAttribute("user",user);
+        user=loginService.save(user);
+        map.put("userInformation",user);
+        return INFORMATION_PATH;
+    }
     @GetMapping(path = "order")
     public String getOrder() {
         return ORDER_PATH;

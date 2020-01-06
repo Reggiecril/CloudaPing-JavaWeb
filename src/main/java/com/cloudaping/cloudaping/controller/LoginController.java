@@ -36,7 +36,6 @@ public class LoginController {
 
 
         if (session.getAttributeNames().hasMoreElements()){
-
             return "redirect:"+PATH_USER;
         }
         return PATH_LOGIN;
@@ -70,7 +69,7 @@ public class LoginController {
             return PATH_LOGIN;
         }
         HttpSession session = request.getSession();
-        session.setAttribute("userId", user.getUserId());
+        session.setAttribute("user", user);
 
         return "redirect:"+PATH_USER;
     }
@@ -120,8 +119,7 @@ public class LoginController {
             return PATH_SIGNUP;
         }
         HttpSession session = request.getSession();
-        session.setAttribute("userId", user.getUserId());
-
+        session.setAttribute("user", user);
         return "redirect:"+PATH_USER;
     }
 }

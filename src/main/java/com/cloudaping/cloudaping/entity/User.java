@@ -1,22 +1,32 @@
 package com.cloudaping.cloudaping.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import net.bytebuddy.implementation.bind.annotation.Empty;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-public class User implements Serializable {
+public class User implements Serializable{
     @Id
     private String userId;
+    @NotNull
     private String email;
     private String username;
     private String password;
-    private String realName;
-    private Long phone;
+    @Column(name="name")
+    private String name;
+    private String phone;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date birthday;
-    private Integer gender;
-
+    private String gender;
+    private static final long serialVersionUID = 2827010208880379604L;
     public User() {
     }
 
@@ -26,6 +36,8 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
     }
+
+
 
     public String getUserId() {
         return userId;
@@ -59,35 +71,38 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getName() {
+        return name;
     }
 
-    public void setRealName(String realName) {
-        this.realName = realName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getBirthday() {
+        SimpleDateFormat formatter  = new SimpleDateFormat("yyyy-MM-dd");
+
+        String  dString = formatter.format(birthday);
+        return dString;
     }
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
-    public Integer getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Integer gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -98,7 +113,7 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", realName='" + realName + '\'' +
+                ", name='" + name + '\'' +
                 ", phone=" + phone +
                 ", birthday=" + birthday +
                 ", gender=" + gender +

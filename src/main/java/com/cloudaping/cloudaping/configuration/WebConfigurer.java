@@ -22,9 +22,12 @@ public class WebConfigurer implements WebMvcConfigurer {
         // TODO Auto-generated method stub
         // addPathPatterns("/**") 表示拦截所有的请求，
         // excludePathPatterns("/login", "/register") 表示除了登陆与注册之外
-        InterceptorRegistration interceptorRegistration=registry.addInterceptor(loginInterceptor);
-        interceptorRegistration.addPathPatterns("/**");
-        interceptorRegistration.excludePathPatterns("/","/index","/user/**");
+        InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
+        // 拦截路径
+        loginRegistry.addPathPatterns("/**");
+        loginRegistry.excludePathPatterns("/","/index","/user/login","/user/signup");
+        loginRegistry.excludePathPatterns("/static/**");
+
     }
 
     @Override
