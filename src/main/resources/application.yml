@@ -9,7 +9,7 @@ spring:
     check-template-location: true
     enabled: true
     expose-spring-macro-helpers: true
-    classic_compatible: true
+    cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -35,3 +35,11 @@ spring:
     properties:
       hibernate:
         enable_lazy_load_no_trans: true
+  devtools:
+    restart:
+      #热部署生效
+      enabled: true
+      #设置重启的目录
+      additional-paths: resources/**,static/**,templates/**
+      #该目录下的内容修改不重启
+      exclude: data/**

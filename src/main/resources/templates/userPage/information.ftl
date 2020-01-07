@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<#include "common/header.ftl">
+<head>
+<#include "common/head.ftl">
+</head>
 <body>
 
 <div class="wrapper">
@@ -19,14 +21,14 @@
                 <label for="email" class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-3">
                     <input type="text" readonly class="form-control-plaintext" name="email" id="email"
-                           value="${userInformation.email}">
+                           value="${user.email}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="username" class="col-sm-2 col-form-label">Username:</label>
                 <div class="col-sm-3">
                     <input type="text" readonly class="form-control-plaintext" name="username" id="username"
-                           value="${userInformation.username!}">
+                           value="${user.username!}">
                 </div>
             </div>
             <div class="line"></div>
@@ -36,20 +38,20 @@
                 <label for="realname" class="col-sm-2 col-form-label">姓名:</label>
                 <div class="col-sm-3">
                     <input type="text" readonly class="form-control-plaintext" name="name" id="name"
-                           value="${userInformation.name!}">
+                           value="${user.name!}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phone" class="col-sm-2 col-form-label">手机号:</label>
                 <div class="col-sm-3">
                     <input type="tel" readonly class="form-control-plaintext" name="phone" id="phone"
-                           value="${userInformation.phone!}">
+                           value="${user.phone!}">
                 </div>
             </div><div class="form-group row">
                 <label for="birthday" class="col-sm-2 col-form-label">出生日期:</label>
                 <div class="col-sm-3">
                     <input type="date" readonly class="form-control-plaintext" name="birthday" id="birthday"
-                           value="${userInformation.birthday!}">
+                           value="${user.birthday!}">
                 </div>
             </div>
             <div class="form-group row">
@@ -58,10 +60,10 @@
 
                         <select class="mdb-select md-form" name="gender" id="gender" disabled>
 
-                                <option <#if !userInformation.gender??>selected</#if>>Open this select menu</option>
+                                <option <#if !user.gender??>selected</#if>>Open this select menu</option>
 
-                                <option <#if userInformation.gender=='男'>selected</#if> value="男">男</option>
-                                <option <#if userInformation.gender=='女'>selected</#if> value="女">女</option>
+                                <option <#if user.gender=='男'>selected</#if> value="男">男</option>
+                                <option <#if user.gender=='女'>selected</#if> value="女">女</option>
 
                         </select>
 

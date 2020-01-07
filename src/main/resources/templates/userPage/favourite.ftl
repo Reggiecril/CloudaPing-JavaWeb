@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<#include "common/header.ftl">
+<#include "common/head.ftl">
 <body>
 
 <div class="wrapper">

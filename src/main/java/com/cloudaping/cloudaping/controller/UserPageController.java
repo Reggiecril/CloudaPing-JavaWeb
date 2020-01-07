@@ -29,7 +29,7 @@ public class UserPageController {
     public String getInformation(HttpSession session,
                                  Map<String,Object> map) {
         User user= (User) session.getAttribute("user");
-        map.put("userInformation",user);
+        map.put("user",user);
         return INFORMATION_PATH;
     }
 
@@ -42,7 +42,7 @@ public class UserPageController {
         user.setPassword(exsitsUser.getPassword());
         session.setAttribute("user",user);
         user=loginService.save(user);
-        map.put("userInformation",user);
+        map.put("user",user);
         return INFORMATION_PATH;
     }
     @GetMapping(path = "order")

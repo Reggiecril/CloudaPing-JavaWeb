@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<#include "header.ftl">
+<#include "head.ftl">
 <body>
 
 <div class="limiter">
