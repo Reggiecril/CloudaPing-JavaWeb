@@ -8,43 +8,8 @@
 <#include "common/header.ftl">
 
 <body>
-<#--header search bar-->
-<div class='header-search'>
-    <div class="container-fluid">
-        <div class='row' style="border-bottom: 1.5px solid #D52341">
-            <div class="col-md-11 " style="margin: 0 auto;">
-                <div class="col-md-3" style="display: inline-block;">
-                    <a href=''><img src='${path}/images/log.png' width="250px" height="60px" alt='log'></a>
-                </div>
-                <div class="col-md-8" style="display: inline-block;margin-top: 10px ">
-                    <form action='index.php?content=sections/search' method='post'>
-                        <input type='text' name='searchText' height='40'>
-                        <select name='searchSelect'>
-                            <option selected='selected' value='All'>All</option>
-                            <option value='laptop'>Laptop</option>
-                            <option value='mobile'>Mobile</option>
-                            <option value='computer'>Computer</option>
-                            <option value='camera'>Camera</option>
-                            <option value='audio&video'>Audio&Video</option>
-                            <option value='others'>Others(X-BOX,Headset and ...)</option>
-                            <option value='shop'>Shop</option>
-                        </select>
-                        <input type='submit' name='searchSubmit' value='Search'>
-                        <div class='header-popular'>
-                            <p>Popular search:</p>
-                            <a href='index.php?content=mainPages/product&product=laptop'>Laptop</a>
-                            <a href='index.php?content=mainPages/product&product=mobile'>Mobile</a>
-                            <a href='index.php?content=mainPages/product&product=computer'>Computer</a>
-                            <a href='index.php?content=mainPages/product&product=camera'>Camera</a>
-                            <a href='index.php?content=mainPages/product&product=X-Box'>X-Box</a>
-                            <a href='index.php?content=mainPages/product&product=headset'>Headset</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<#include "common/search.ftl">
+
 <#--banner-->
 <div class="main" id="main">
 
@@ -93,170 +58,237 @@
     </div>
     <!--子-->
     <div class="sub-menu hide" id="sub-menu">
+        <!--笔记本电脑-->
+        <div class="inner-box ">
+            <div class="sub-inner-box">
+                <div class="tittle">笔记本电脑</div>
+                <div class="sub gun1">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list laptop["laptopBrand"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">显卡:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list laptop["laptopGraphicsCard"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">CPU:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list laptop["laptopCpu"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">尺寸:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list laptop["laptopSize"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+
+                </div>
+            </div>
+            <div class="scroll_bar1"></div>
+        </div>
         <!--手机-->
         <div class="inner-box ">
             <div class="sub-inner-box">
-                <div class="tittle">手机、配件</div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
+                <div class="tittle">手机</div>
+                <div class="sub gun2">
+                    <dl>
+                        <dt><a href="#">品牌<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list mobile["mobileBrand"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
 
-                    <span class="bold mr10" style="display: inline-block">手机通讯：</span>
-                    <div style="width: 500px;display: inline-block">
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                        <span class="ml10 mr10">/</span>
-                        <a href="#">手机</a>
-                    </div>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
+                    </dl>
+                    <dl>
+                        <dt><a href="#">尺寸<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list mobile["mobileSize"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
 
+                    </dl>
+                    <dl>
+                        <dt><a href="#">系统<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list mobile["mobileSystem"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">像素<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list mobile["mobilePixel"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </div>
             </div>
-
+            <div class="scroll_bar2"></div>
         </div>
-        <!--电脑-->
-        <div class="inner-box">
+        <!--台式电脑-->
+        <div class="inner-box ">
             <div class="sub-inner-box">
-                <div class="tittle">电脑</div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
+                <div class="tittle">台式电脑</div>
+                <div class="sub gun3">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list computer["computerBrand"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
 
+                    </dl>
+                    <dl>
+                        <dt><a href="#">外设:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list computer["computerCase"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">屏幕:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list computer["computerScreen"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">CPU:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list computer["computerCpu"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">显卡:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list computer["computerGraphicsCard"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </div>
             </div>
-
+            <div class="scroll_bar3"></div>
         </div>
-        <!--电器-->
-        <div class="inner-box">
+        <!--照相机-->
+        <div class="inner-box ">
             <div class="sub-inner-box">
-                <div class="tittle">电器</div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
+                <div class="tittle">照相机</div>
+                <div class="sub gun4">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list camera["cameraBrand"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
 
+                    </dl>
+                    <dl>
+                        <dt><a href="#">分类:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list camera["cameraType"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">像素:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list camera["cameraPixel"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+
+                </div>
             </div>
-
+            <div class="scroll_bar4"></div>
         </div>
-        <!--家具-->
-        <div class="inner-box">
+        <!--影音设备-->
+        <div class="inner-box ">
             <div class="sub-inner-box">
-                <div class="tittle">家具</div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
-                <div class="sub-row">
-                    <span class="bold mr10">手机通讯：</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                    <span class="ml10 mr10">/</span>
-                    <a href="#">手机</a>
-                </div>
+                <div class="tittle">影音设备</div>
+                <div class="sub gun5">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list audiovideo["audioVideoBrand"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
 
+                    </dl>
+                    <dl>
+                        <dt><a href="#">分类:<i> &gt;</i></a> </dt>
+                        <dd>
+                            <#list audiovideo["audioVideoType"] as l>
+                                <a href="#">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+
+                </div>
             </div>
-
+            <div class="scroll_bar5"></div>
         </div>
+        <!--其他-->
+        <div class="inner-box ">
+            <div class="sub-inner-box">
+                <div class="tittle">其他</div>
+                <div class="sub gun6">
 
+
+                </div>
+            </div>
+            <div class="scroll_bar6"></div>
+        </div>
+        <!--商铺-->
+        <div class="inner-box ">
+            <div class="sub-inner-box">
+                <div class="tittle">商铺</div>
+                <div class="sub gun7">
+
+                </div>
+            </div>
+            <div class="scroll_bar7"></div>
+        </div>
     </div>
     <!--图片轮播-->
     <div class="banner" id="banner">
@@ -291,32 +323,66 @@
     </div>
 </div>
 <#--Sections-->
-<div class="home-rank">
-    <div style="width:1200px; margin: 0 auto">
+<#list categoryMap?keys as categoryKey>
+    <div class="home-rank">
+        <div style="width:1250px; margin: 0 auto">
 
-        <div class="home-rank-title">
-            <p>Popular</p>
+            <div class="home-rank-title">
+                <p>
+                    ${categoryKey}
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="home-rank-content container-fluid">
-        <div style="width:1200px; margin: 0 auto">
-            <div class="home-rank-item">
-                <a href="">
-                    <div class="home-rank-item-image">
-                        <img src="${path}/images/banner-1.jpg" width="95%" height="95%">
+        <div class="home-rank-content container-fluid">
+            <div style="width:1250px; margin: 0 auto">
+                <#list categoryMap[categoryKey] as category>
+                    <div class="home-rank-item">
+                        <div class="home-rank-item-image">
+                            <a href=""> <img src="${path}/productImages/${category.productImage}"/></a>
+                        </div>
+                        <div class="home-rank-item-product">
+                            <a>${category.productName}</a>
+                        </div>
+                        <div class="home-rank-item-price">
+                            <p>£${category.productNowPrice}</p>
+                        </div>
                     </div>
-                    <div class="home-rank-item-product">
-                        name
-                    </div>
-                    <div class="home-rank-item-price">
-                        price
-                    </div>
-                </a>
+                </#list>
             </div>
         </div>
     </div>
-</div>
+</#list>
 <#--Page Javascript-->
 <script src="${path}/js/slider.js"></script>
+<script type="text/javascript">
+    new CusScrollBar({
+        contentSelector: '.gun1', //滚动内容区
+        barSelector: '.scroll_bar1', //滚动条
+    });
+    new CusScrollBar({
+        contentSelector: '.gun2', //滚动内容区
+        barSelector: '.scroll_bar2', //滚动条
+    });
+    new CusScrollBar({
+        contentSelector: '.gun3', //滚动内容区
+        barSelector: '.scroll_bar3', //滚动条
+    });
+    new CusScrollBar({
+        contentSelector: '.gun4', //滚动内容区
+        barSelector: '.scroll_bar4', //滚动条
+    });
+    new CusScrollBar({
+        contentSelector: '.gun5', //滚动内容区
+        barSelector: '.scroll_bar5', //滚动条
+    });
+
+    new CusScrollBar({
+        contentSelector: '.gun6', //滚动内容区
+        barSelector: '.scroll_bar6', //滚动条
+    });new CusScrollBar({
+        contentSelector: '.gun7', //滚动内容区
+        barSelector: '.scroll_bar7', //滚动条
+    });
+</script>
 </body>
 </html>

@@ -24,9 +24,7 @@ public class WebConfigurer implements WebMvcConfigurer {
         // excludePathPatterns("/login", "/register") 表示除了登陆与注册之外
         InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
         // 拦截路径
-        loginRegistry.addPathPatterns("/**");
-        loginRegistry.excludePathPatterns("/static/**");
-        loginRegistry.excludePathPatterns("/","/index","/user/login","/user/signup");
+        loginRegistry.addPathPatterns("/userPage/**");
 
 
     }
