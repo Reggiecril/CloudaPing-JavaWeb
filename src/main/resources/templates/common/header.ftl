@@ -19,7 +19,7 @@
                     <a href='/user/signup'> | 注册</a>
                 <#else>
                     <a href='/userPage/information'>
-                        <#if user.username??>
+                        <#if user.username??&&user.username!="">
                             ${user.username}
                         <#else>
                             ${user.email}

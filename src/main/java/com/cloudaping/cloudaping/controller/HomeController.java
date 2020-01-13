@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Controller
 public class HomeController{
@@ -26,14 +27,24 @@ public class HomeController{
         if (user!=null){
             map.put("user",user);
         }
+
         for (ProductTypeEnum productTypeEnum: ProductTypeEnum.values()
              ) {
-            map.put(
-                    productTypeEnum.getTranslatedType(),
-                    ConvertDuplicate.getNotDuplicate
+            Map<String, Set<Object>> productType= (Map<String, Set<Object>>) session.getAttribute(productTypeEnum.getTranslatedType());
+
+            if (productType==null)
+                session.
+                    setAttribute(
+                            productTypeEnum.getTranslatedType(),
+                            ConvertDuplicate.getNotDuplicate
                             (productService.findTypes
                                     (productTypeEnum.getType()),productTypeEnum.getType()));
+            map.put(
+                    productTypeEnum.getTranslatedType(),
+                    session.getAttribute(productTypeEnum.getTranslatedType())
+                    );
         }
+
         Map<String,List<Product>> categoryMap=new HashMap<>();
         for (ProductCategoryEnum productCategoryEnum: ProductCategoryEnum.values()){
             List<Product> categoryProducts=productService.findAllByProductCategory(productCategoryEnum.getCategoryCode());

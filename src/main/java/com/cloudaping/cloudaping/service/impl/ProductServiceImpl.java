@@ -3,6 +3,7 @@ package com.cloudaping.cloudaping.service.impl;
 import com.cloudaping.cloudaping.dao.ProductRepository;
 import com.cloudaping.cloudaping.entity.Product;
 import com.cloudaping.cloudaping.entity.productType.ProductType;
+import com.cloudaping.cloudaping.enums.ProductCategoryEnum;
 import com.cloudaping.cloudaping.mapper.ProductTypeMapper;
 import com.cloudaping.cloudaping.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,5 +71,15 @@ public class ProductServiceImpl implements ProductService {
                 break;
         }
         return list;
+    }
+
+    @Override
+    public List<Product> findPopularProduct(Integer quantity) {
+        return productTypeMapper.selectByCategoryWithLimit(ProductCategoryEnum.popular.getCategoryCode(),5);
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return productRepository.findAll();
     }
 }

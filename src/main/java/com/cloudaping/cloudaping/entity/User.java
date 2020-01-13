@@ -13,20 +13,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
     @Id
     private String userId;
     @NotNull
     private String email;
     private String username;
     private String password;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
     private String phone;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date birthday;
+    private String birthday;
     private String gender;
-    private static final long serialVersionUID = 2827010208880379604L;
+    private static final long serialVersionUID = 5615556731591461835L;
+
     public User() {
     }
 
@@ -36,7 +36,6 @@ public class User implements Serializable{
         this.username = username;
         this.password = password;
     }
-
 
 
     public String getUserId() {
@@ -88,13 +87,10 @@ public class User implements Serializable{
     }
 
     public String getBirthday() {
-        SimpleDateFormat formatter  = new SimpleDateFormat("yyyy-MM-dd");
-
-        String  dString = formatter.format(birthday);
-        return dString;
+        return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

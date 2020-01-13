@@ -4,7 +4,7 @@
         <div class='row' style="border-bottom: 1.5px solid #D52341">
             <div class="col-md-11 " style="margin: 0 auto;">
                 <div class="col-md-3" style="display: inline-block;">
-                    <a href=''><img src='${path}/images/log.png' width="250px" height="60px" alt='log'></a>
+                    <a href='/'><img src='${path}/images/log.png' width="250px" height="60px" alt='log'></a>
                 </div>
                 <div class="col-md-8" style="display: inline-block;margin-top: 10px ">
                     <form action='index.php?content=sections/search' method='post'>

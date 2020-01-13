@@ -16,10 +16,10 @@
                     <a class="nav-link" href="/">首页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/product">商品页面</a>
+                    <a class="nav-link" href="/product/">商品页面</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/aboutus">关于我们</a>
+                    <a class="nav-link" href="/aboutus/">关于我们</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout">退出登录</a>

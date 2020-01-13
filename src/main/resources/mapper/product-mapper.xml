@@ -3,56 +3,56 @@
 <mapper namespace="com.cloudaping.cloudaping.mapper.ProductTypeMapper">
 
     <resultMap type="com.cloudaping.cloudaping.entity.Product" id="ProductMap">
-        <id column="product_id" property="productId" jdbcType="INTEGER" />
-        <result column="product_name" property="productName" jdbcType="VARCHAR" />
-        <result column="product_type" property="productType" jdbcType="INTEGER" />
-        <result column="product_origin_price" property="productOriginPrice" jdbcType="DOUBLE" />
-        <result column="product_now_price" property="productNowPrice" jdbcType="DOUBLE" />
-        <result column="product_quantity" property="productQuantity" jdbcType="INTEGER" />
-        <result column="product_category" property="productCategory" jdbcType="INTEGER" />
-        <result column="product_image" property="productImage" jdbcType="VARCHAR" />
-        <result column="trader_id" property="traderId" jdbcType="VARCHAR" />
-        <result column="product_sale" property="productSale" jdbcType="INTEGER" />
+        <id column="product_id" property="productId" jdbcType="INTEGER"/>
+        <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+        <result column="product_type" property="productType" jdbcType="INTEGER"/>
+        <result column="product_origin_price" property="productOriginPrice" jdbcType="DOUBLE"/>
+        <result column="product_now_price" property="productNowPrice" jdbcType="DOUBLE"/>
+        <result column="product_quantity" property="productQuantity" jdbcType="INTEGER"/>
+        <result column="product_category" property="productCategory" jdbcType="INTEGER"/>
+        <result column="product_image" property="productImage" jdbcType="VARCHAR"/>
+        <result column="trader_id" property="traderId" jdbcType="VARCHAR"/>
+        <result column="product_sale" property="productSale" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap type="com.cloudaping.cloudaping.entity.productType.Laptop" id="LaptopMap">
-        <id column="laptop_id" property="laptopId" jdbcType="INTEGER" />
-        <result column="laptop_brand" property="laptopBrand" jdbcType="VARCHAR" />
-        <result column="laptop_graphics_card" property="laptopGraphicsCard" jdbcType="VARCHAR" />
-        <result column="laptop_cpu" property="laptopCpu" jdbcType="VARCHAR" />
-        <result column="laptop_size" property="laptopSize" jdbcType="VARCHAR" />
-        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <id column="laptop_id" property="laptopId" jdbcType="INTEGER"/>
+        <result column="laptop_brand" property="laptopBrand" jdbcType="VARCHAR"/>
+        <result column="laptop_graphics_card" property="laptopGraphicsCard" jdbcType="VARCHAR"/>
+        <result column="laptop_cpu" property="laptopCpu" jdbcType="VARCHAR"/>
+        <result column="laptop_size" property="laptopSize" jdbcType="VARCHAR"/>
+        <result column="product_id" property="productId" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap id="CameraMap" type="com.cloudaping.cloudaping.entity.productType.Camera">
-        <result column="camera_id" property="cameraId" jdbcType="INTEGER" />
-        <result column="camera_brand" property="cameraBrand" jdbcType="VARCHAR" />
-        <result column="camera_type" property="cameraType" jdbcType="VARCHAR" />
-        <result column="camera_pixel" property="cameraPixel" jdbcType="VARCHAR" />
-        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <result column="camera_id" property="cameraId" jdbcType="INTEGER"/>
+        <result column="camera_brand" property="cameraBrand" jdbcType="VARCHAR"/>
+        <result column="camera_type" property="cameraType" jdbcType="VARCHAR"/>
+        <result column="camera_pixel" property="cameraPixel" jdbcType="VARCHAR"/>
+        <result column="product_id" property="productId" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap id="MobileMap" type="com.cloudaping.cloudaping.entity.productType.Mobile">
-        <result column="mobile_id" property="mobileId" jdbcType="INTEGER" />
-        <result column="mobile_brand" property="mobileBrand" jdbcType="VARCHAR" />
-        <result column="mobile_size" property="mobileSize" jdbcType="VARCHAR" />
-        <result column="mobile_system" property="mobileSystem" jdbcType="VARCHAR" />
-        <result column="mobile_pixel" property="mobilePixel" jdbcType="VARCHAR" />
-        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <result column="mobile_id" property="mobileId" jdbcType="INTEGER"/>
+        <result column="mobile_brand" property="mobileBrand" jdbcType="VARCHAR"/>
+        <result column="mobile_size" property="mobileSize" jdbcType="VARCHAR"/>
+        <result column="mobile_system" property="mobileSystem" jdbcType="VARCHAR"/>
+        <result column="mobile_pixel" property="mobilePixel" jdbcType="VARCHAR"/>
+        <result column="product_id" property="productId" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap id="ComputerMap" type="com.cloudaping.cloudaping.entity.productType.Computer">
-        <result column="computer_id" property="computerId" jdbcType="INTEGER" />
-        <result column="computer_brand" property="computerBrand" jdbcType="VARCHAR" />
-        <result column="computer_case" property="computerCase" jdbcType="VARCHAR" />
-        <result column="computer_screen" property="computerScreen" jdbcType="VARCHAR" />
-        <result column="computer_cpu" property="computerCpu" jdbcType="VARCHAR" />
-        <result column="computer_graphics_card" property="computerGraphicsCard" jdbcType="VARCHAR" />
-        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <result column="computer_id" property="computerId" jdbcType="INTEGER"/>
+        <result column="computer_brand" property="computerBrand" jdbcType="VARCHAR"/>
+        <result column="computer_case" property="computerCase" jdbcType="VARCHAR"/>
+        <result column="computer_screen" property="computerScreen" jdbcType="VARCHAR"/>
+        <result column="computer_cpu" property="computerCpu" jdbcType="VARCHAR"/>
+        <result column="computer_graphics_card" property="computerGraphicsCard" jdbcType="VARCHAR"/>
+        <result column="product_id" property="productId" jdbcType="INTEGER"/>
     </resultMap>
     <resultMap id="AudioVideoMap" type="com.cloudaping.cloudaping.entity.productType.AudioVideo">
-        <result column="audio_video_id" property="audioVideoId" jdbcType="INTEGER" />
-        <result column="audio_video_type" property="audioVideoType" jdbcType="VARCHAR" />
-        <result column="audio_video_brand" property="audioVideoBrand" jdbcType="VARCHAR" />
-        <result column="product_id" property="productId" jdbcType="INTEGER" />
+        <result column="audio_video_id" property="audioVideoId" jdbcType="INTEGER"/>
+        <result column="audio_video_type" property="audioVideoType" jdbcType="VARCHAR"/>
+        <result column="audio_video_brand" property="audioVideoBrand" jdbcType="VARCHAR"/>
+        <result column="product_id" property="productId" jdbcType="INTEGER"/>
     </resultMap>
-
+    <!--category-->
     <select id="selectLaptop" resultMap="LaptopMap">
         select * from product_laptop
     </select>
@@ -69,6 +69,28 @@
         select * from product_audiovideo
     </select>
 
+    <select id="selectByCategoryWithLimit" resultMap="ProductMap" parameterType="java.util.ArrayList">
+        select * from product where product_category=#{productCategory} limit #{limit}
+    </select>
+    <!--  -->
+    <select id="selectByTypeParams" resultMap="ProductMap" parameterType="java.util.Map">
+        select * from product
+        <if test="productType.type!=null">
+            <where>
+                product_id in
+                (
+                <if test="productType.type=='laptop'">
+                    select product_id from product_laptop
+                    <where>
+                        <if test="productType.laptopBrand!=null">
+                            laptop_brand=#{productType.laptopBrand}
+                        </if>
 
+                    </where>
+                </if>
+                )
+            </where>
+        </if>
+    </select>
 
 </mapper>

@@ -12,4 +12,7 @@ public interface ProductService {
     Product findById(Integer ProductId);
     void delete(Product product);
     List<ProductType> findTypes(Integer productType);
+    List<Product> findPopularProduct(Integer quantity);
+    List<Product> findAll();
+
 }
