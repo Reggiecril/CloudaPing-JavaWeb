@@ -10,37 +10,37 @@
                 <div class="i-mc">
                     <div class="sub">
                         <dl>
-                            <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                            <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list laptop["laptopBrand"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=laptop&laptopBrand=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">显卡:<i> &gt;</i></a></dt>
+                            <dt><a href="#">显卡:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list laptop["laptopGraphicsCard"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=laptop&laptopGraphicsCard=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">CPU:<i> &gt;</i></a></dt>
+                            <dt><a href="#">CPU:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list laptop["laptopCpu"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=laptop&laptopCpu=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">尺寸:<i> &gt;</i></a></dt>
+                            <dt><a href="#">尺寸:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list laptop["laptopSize"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=laptop&laptopSize=${l}">${l}</a>
                                 </#list>
                             </dd>
 
@@ -55,37 +55,37 @@
                 <div class="i-mc">
                     <div class="sub">
                         <dl>
-                            <dt><a href="#">品牌<i> &gt;</i></a></dt>
+                            <dt><a href="#">品牌<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list mobile["mobileBrand"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=mobile&mobileBrand=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">尺寸<i> &gt;</i></a></dt>
+                            <dt><a href="#">尺寸<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list mobile["mobileSize"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=mobile&mobileSize=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">系统<i> &gt;</i></a></dt>
+                            <dt><a href="#">系统<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list mobile["mobileSystem"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=mobile&mobileSystem=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">像素<i> &gt;</i></a></dt>
+                            <dt><a href="#">像素<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list mobile["mobilePixel"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=mobile&mobilePixel=${l}">${l}</a>
                                 </#list>
                             </dd>
 
@@ -100,46 +100,46 @@
                 <div class="i-mc">
                     <div class="sub">
                         <dl>
-                            <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                            <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list computer["computerBrand"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=computer&computerBrand=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">外设:<i> &gt;</i></a></dt>
+                            <dt><a href="#">外设:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list computer["computerCase"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=computer&computerCase=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">屏幕:<i> &gt;</i></a></dt>
+                            <dt><a href="#">屏幕:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list computer["computerScreen"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=computer&computerScreen=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">CPU:<i> &gt;</i></a></dt>
+                            <dt><a href="#">CPU:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list computer["computerCpu"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=computer&computerCpu=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">显卡:<i> &gt;</i></a></dt>
+                            <dt><a href="#">显卡:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list computer["computerGraphicsCard"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=computer&computerGraphicsCard=${l}">${l}</a>
                                 </#list>
                             </dd>
 
@@ -153,28 +153,28 @@
                 <div class="i-mc">
                     <div class="sub">
                         <dl>
-                            <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                            <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list camera["cameraBrand"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=camera&cameraBrand=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">分类:<i> &gt;</i></a></dt>
+                            <dt><a href="#">分类:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list camera["cameraType"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=camera&cameraType=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">像素:<i> &gt;</i></a></dt>
+                            <dt><a href="#">像素:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list camera["cameraPixel"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=camera&cameraPixel=${l}">${l}</a>
                                 </#list>
                             </dd>
 
@@ -189,19 +189,19 @@
                 <div class="i-mc">
                     <div class="sub">
                         <dl>
-                            <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                            <dt><a href="#">品牌:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list audiovideo["audioVideoBrand"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=audiovideo&audioVideoBrand=${l}">${l}</a>
                                 </#list>
                             </dd>
 
                         </dl>
                         <dl>
-                            <dt><a href="#">分类:<i> &gt;</i></a></dt>
+                            <dt><a href="#">分类:<i> &gt;</i></a> </dt>
                             <dd>
                                 <#list audiovideo["audioVideoType"] as l>
-                                    <a href="#">${l}</a>
+                                    <a href="/product/all?type=audiovideo&audioVideoType=${l}">${l}</a>
                                 </#list>
                             </dd>
 
@@ -225,28 +225,31 @@
         <li><a href="/">Home</a></li>
     </div>
 </div>
+<#assign urlPath="/product/all">
 <div class="product-category-title" style="width:1280px;margin: 0 auto">
     <div class="product-category-title-content">
         <div class="product-category-title-first"><a href="/product/all">All</a></div>
         <#if RequestParameters["type"]??>
+            <#assign urlPath=urlPath+"?type="+RequestParameters["type"]>
+
             <div class="product-category-title-sign">
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </div>
 
             <div class="product-category-title-first">
-                <a href="/product/all?type=${RequestParameters["type"]}">${RequestParameters["type"]}</a>
+                <a href="${urlPath}">${RequestParameters["type"]}</a>
             </div>
             <#if productPath??>
             <#-- 参数-->
-                <#assign strPath="">
 
                 <#list productPath?keys as key>
-                    <#assign strPath=strPath+"&"+key+"="+productPath[key]>
+                    <#assign urlPath=urlPath+"&"+key+"="+productPath[key]>
+
                     <div class="product-category-title-sign">
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     </div>
                     <div class="product-category-title-last">
-                        <a href="/product/all?type=${RequestParameters["type"]+strPath}">${productPath[key]}</a>
+                        <a href="${urlPath}">${productPath[key]}</a>
                     </div>
                 </#list>
             </#if>

@@ -50,7 +50,8 @@
                         <dt><a href="#">品牌:<i> &gt;</i></a></dt>
                         <dd>
                             <#list laptop["laptopBrand"] as l>
-                                <a href="${}">${l}</a>
+
+                                <a href="${urlPath?replace('(^|\\\\?|&)laptopBrand=([^&]*)','','r')+"&laptopBrand="+l}">${l}</a>
                             </#list>
                         </dd>
 
@@ -59,7 +60,8 @@
                         <dt><a href="#">显卡:<i> &gt;</i></a></dt>
                         <dd>
                             <#list laptop["laptopGraphicsCard"] as l>
-                                <a href="#">${l}</a>
+
+                                <a href="${urlPath?replace('(^|\\\\?|&)laptopGraphicsCard=([^&]*)','','r')+"&laptopGraphicsCard="+l}">${l}</a>
                             </#list>
                         </dd>
 
@@ -68,7 +70,8 @@
                         <dt><a href="#">CPU:<i> &gt;</i></a></dt>
                         <dd>
                             <#list laptop["laptopCpu"] as l>
-                                <a href="#">${l}</a>
+
+                                <a href="${urlPath?replace('(^|\\\\?|&)laptopCpu=([^&]*)','','r')+"&laptopCpu="+l}">${l}</a>
                             </#list>
                         </dd>
 
@@ -77,71 +80,180 @@
                         <dt><a href="#">尺寸:<i> &gt;</i></a></dt>
                         <dd>
                             <#list laptop["laptopSize"] as l>
-                                <a href="#">${l}</a>
+                                <a href="${urlPath?replace('(^|\\\\?|&)laptopSize=([^&]*)','','r')+"&laptopSize="+l}">${l}</a>
                             </#list>
                         </dd>
 
                     </dl>
                 </#if>
-                <#if RequestParameters["type"]=="mobile"></#if>
-                <#if RequestParameters["type"]=="audiovideo"></#if>
-                <#if RequestParameters["type"]=="computer"></#if>
-                <#if RequestParameters["type"]=="camera"></#if>
+                <#if RequestParameters["type"]=="mobile">
+                    <dl>
+                        <dt><a href="#">品牌<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list mobile["mobileBrand"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)mobileBrand=([^&]*)','','r')+"&mobileBrand="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">尺寸<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list mobile["mobileSize"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)mobileSize=([^&]*)','','r')+"&mobileSize="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">系统<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list mobile["mobileSystem"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)mobileSystem=([^&]*)','','r')+"&mobileSystem="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">像素<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list mobile["mobilePixel"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)mobilePixel=([^&]*)','','r')+"&mobilePixel="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </#if>
+
+                <#if RequestParameters["type"]=="audiovideo">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list audiovideo["audioVideoBrand"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)audioVideoBrand=([^&]*)','','r')+"&audioVideoBrand="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">分类:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list audiovideo["audioVideoType"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)audioVideoType=([^&]*)','','r')+"&audioVideoType="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </#if>
+                <#if RequestParameters["type"]=="computer">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list computer["computerBrand"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)computerBrand=([^&]*)','','r')+"&computerBrand="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">外设:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list computer["computerCase"] as l>
+
+                                <a href="${urlPath?replace('(^|\\\\?|&)computerCase=([^&]*)','','r')+"&computerCase="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">屏幕:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list computer["computerScreen"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)computerScreen=([^&]*)','','r')+"&computerScreen="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">CPU:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list computer["computerCpu"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)computerCpu=([^&]*)','','r')+"&computerCpu="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">显卡:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list computer["computerGraphicsCard"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)computerGraphicsCard=([^&]*)','','r')+"&computerGraphicsCard="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </#if>
+                <#if RequestParameters["type"]=="camera">
+                    <dl>
+                        <dt><a href="#">品牌:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list camera["cameraBrand"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)cameraBrand=([^&]*)','','r')+"&cameraBrand="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">分类:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list camera["cameraType"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)cameraType=([^&]*)','','r')+"&cameraType="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                    <dl>
+                        <dt><a href="#">像素:<i> &gt;</i></a></dt>
+                        <dd>
+                            <#list camera["cameraPixel"] as l>
+                                <a href="${urlPath?replace('(^|\\\\?|&)cameraPixel=([^&]*)','','r')+"&cameraPixel="+l}">${l}</a>
+                            </#list>
+                        </dd>
+
+                    </dl>
+                </#if>
 
 
             </#if>
         </div>
         <div class="product-filter">
-            <li><a href="/">Sell</a></li>
+            <li><a href="${urlPath?replace('(^|\\\\?|&)order=([^&]*)','','r')+"&order=product_sale"}">Sell</a></li>
             <li><a href="/">Reviews</a></li>
-            <li><a href="/">Update Date</a></li>
-            <li><a href="/">Price</a></li>
+            <li><a href="${urlPath?replace('(^|\\\\?|&)order=([^&]*)','','r')+"&order=update_time"}">Update Date</a></li>
+            <li><a href="${urlPath?replace('(^|\\\\?|&)order=([^&]*)','','r')+"&order=product_now_price"}">Price</a></li>
         </div>
         <div class="product-goods">
-            <div class="product-goods-item">
-                <a href=""><img src="assets/images/" alt="log" width="220" height="220"></a>
-                <div class="product-goods-price">
-
+            <#list productList as p>
+                <div class="product-goods-item">
+                    <a href="/item?id=${p.productId+urlPath?replace("/product/all","")?replace("?","&")}"><img src="${path}/productImages/${p.productImage}" alt="log" width="220" height="220"></a>
+                    <div class="product-goods-price">
+                        <p>£${p.productNowPrice}</p>
+                    </div>
+                    <div class="product-goods-sell">
+                        <p>${p.productSale}</p>
+                    </div>
+                    <div class="product-goods-name">
+                        <a href="/item?${urlPath?replace("/product/all","")?replace("?","&")}&id=${p.productId}">${p.productName}</a>
+                    </div>
+                    <div class="product-goods-trader">
+                        <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i>${p.traderId}</a>
+                    </div>
                 </div>
-                <div class="product-goods-sell">
-                </div>
-                <div class="product-goods-name">
-                    <a href=""></a>
-                </div>
-                <div class="product-goods-trader">
-                    <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
+            </#list>
         </div>
 
     </div>
 
 </div>
 </body>
-<script type="text/javascript">
-    function changeURLPar(destiny, par, par_value)
-    {
-        var pattern = par+'=([^&]*)';
-        var replaceText = par+'='+par_value;
-        if (destiny.match(pattern))
-        {
-            var tmp = '/\\'+par+'=[^&]*/';
-            tmp = destiny.replace(eval(tmp), replaceText);
-            return (tmp);
-        }
-        else
-        {
-            if (destiny.match('[\?]'))
-            {
-                return destiny+'&'+ replaceText;
-            }
-            else
-            {
-                return destiny+'?'+replaceText;
-            }
-        }
-        return destiny+'\n'+par+'\n'+par_value;
-    }
-</script>
 </html>

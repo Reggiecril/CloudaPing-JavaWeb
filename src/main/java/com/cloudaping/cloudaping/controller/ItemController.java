@@ -1,7 +1,6 @@
 package com.cloudaping.cloudaping.controller;
 
 import com.cloudaping.cloudaping.entity.Product;
-import com.cloudaping.cloudaping.enums.ProductCategoryEnum;
 import com.cloudaping.cloudaping.enums.ProductTypeEnum;
 import com.cloudaping.cloudaping.service.ProductService;
 import com.cloudaping.cloudaping.utils.ConvertDuplicate;
@@ -12,21 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 @Controller
-@RequestMapping(value = "/product")
-public class ProductController {
-
+@RequestMapping(value = "/item")
+public class ItemController {
     @Autowired
     private ProductService productService;
-
-    @GetMapping(value = {"/", "/all"})
-    public String getAll(Map<String, Object> map,
-                         @RequestParam(required = false) Map<String, Object> params,
-                         HttpSession session) {
-
-        //导航栏
+    @GetMapping(value = {"/",""})
+    public String getItem(Map<String, Object> map,
+                          @RequestParam(required = false) Map<String, Object> params,
+                          HttpSession session
+                          ){
         for (ProductTypeEnum productTypeEnum : ProductTypeEnum.values()
         ) {
             Map<String, Set<Object>> productType= (Map<String, Set<Object>>) session.getAttribute(productTypeEnum.getTranslatedType());
@@ -43,30 +40,9 @@ public class ProductController {
                     session.getAttribute(productTypeEnum.getTranslatedType())
             );
         }
-        //用户查询路径: ALL>laptop>...
-        //+
-        //分类
-
-        String type= (String) params.remove("type");
-        List<Product> productList=new ArrayList<>();
-        if (type!=null) {
-            //All>Laptop
-            map.put("productPath",params);
-            //!!!
-            params.put("type",type);
-            productList=productService.findAllByProductTypeParameters(params);
-            params.remove("type");
-            //次级分类
-            map.put("productType",(Map<String, Set<Object>>)session.getAttribute(ProductTypeEnum.valueOf(type.toLowerCase().replace("&","")).getTranslatedType()));
-        }else {
-            //所有商品
-            productList=productService.findAll();
-        }
-        map.put("productList",productList);
-        //最热
-        List<Product> popularProduct=productService.findPopularProduct(5);
-        map.put("popularProduct",popularProduct);
-
-        return "product/all";
+        map.put("productPath",params);
+        Product product=productService.findById((Integer) params.get("id"));
+        map.put("productdetail",product);
+        return "item/item";
     }
 }

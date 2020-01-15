@@ -4,6 +4,7 @@ import com.cloudaping.cloudaping.entity.Product;
 import com.cloudaping.cloudaping.entity.productType.ProductType;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProductService {
     Product save(Product product);
@@ -14,5 +15,6 @@ public interface ProductService {
     List<ProductType> findTypes(Integer productType);
     List<Product> findPopularProduct(Integer quantity);
     List<Product> findAll();
+    List<Product> findAllByProductTypeParameters(Map<String,Object> map);
 
 }

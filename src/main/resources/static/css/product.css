@@ -252,6 +252,12 @@ product-category-title{
     margin:4px;
     border: 1px solid #eee;
 }
+.product-goods-item img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
 .product-goods-price{
     display: inline-block;
     font-size: 20px;

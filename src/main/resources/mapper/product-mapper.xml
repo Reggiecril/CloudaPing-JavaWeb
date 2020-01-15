@@ -85,11 +85,84 @@
                         <if test="productType.laptopBrand!=null">
                             laptop_brand=#{productType.laptopBrand}
                         </if>
-
+                        <if test="productType.laptopGraphicsCard!=null">
+                            laptop_graphics_card=#{productType.laptopGraphicsCard}
+                        </if>
+                        <if test="productType.laptopCpu!=null">
+                            laptop_cpu=#{productType.laptopCpu}
+                        </if>
+                        <if test="productType.laptopSize!=null">
+                            laptop_size=#{productType.laptopSize}
+                        </if>
+                    </where>
+                </if>
+                <if test="productType.type=='computer'">
+                    select product_id from product_computer
+                    <where>
+                        <if test="productType.computerBrand!=null">
+                            computer_brand=#{productType.computerBrand}
+                        </if>
+                        <if test="productType.computerGraphicsCard!=null">
+                            computer_graphics_card=#{productType.computerGraphicsCard}
+                        </if>
+                        <if test="productType.computerCpu!=null">
+                            computer_cpu=#{productType.computerCpu}
+                        </if>
+                        <if test="productType.computerCase!=null">
+                            computer_case=#{productType.computerCase}
+                        </if>
+                        <if test="productType.computerScreen!=null">
+                            computer_screen=#{productType.computerScreen}
+                        </if>
+                    </where>
+                </if>
+                <if test="productType.type=='mobile'">
+                    select product_id from product_mobile
+                    <where>
+                        <if test="productType.mobileBrand!=null">
+                            mobile_brand=#{productType.mobileBrand}
+                        </if>
+                        <if test="productType.mobileSize!=null">
+                            mobile_size=#{productType.mobileSize}
+                        </if>
+                        <if test="productType.mobileSystem!=null">
+                            mobile_system=#{productType.mobileSystem}
+                        </if>
+                        <if test="productType.mobilePixel!=null">
+                            mobile_pixel=#{productType.mobilePixel}
+                        </if>
+                    </where>
+                </if>
+                <if test="productType.type=='camera'">
+                    select product_id from product_camera
+                    <where>
+                        <if test="productType.cameraBrand!=null">
+                            camera_brand=#{productType.cameraBrand}
+                        </if>
+                        <if test="productType.cameraType!=null">
+                            camera_type=#{productType.cameraType}
+                        </if>
+                        <if test="productType.cameraPixel!=null">
+                            camera_pixel=#{productType.cameraPixel}
+                        </if>
+                    </where>
+                </if>
+                <if test="productType.type=='audiovideo'">
+                    select product_id from product_audiovideo
+                    <where>
+                        <if test="productType.audiovideoBrand!=null">
+                            audio_video_brand=#{productType.audiovideoBrand}
+                        </if>
+                        <if test="productType.audioVideoType!=null">
+                            audio_video_type=#{productType.audioVideoType}
+                        </if>
                     </where>
                 </if>
                 )
             </where>
+        </if>
+        <if test="productType.order!=null">
+            Order BY #{productType.order}
         </if>
     </select>
 
