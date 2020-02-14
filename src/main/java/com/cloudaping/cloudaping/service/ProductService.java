@@ -1,5 +1,6 @@
 package com.cloudaping.cloudaping.service;
 
+import com.cloudaping.cloudaping.dto.CartDTO;
 import com.cloudaping.cloudaping.entity.Product;
 import com.cloudaping.cloudaping.entity.productType.ProductType;
 
@@ -16,5 +17,6 @@ public interface ProductService {
     List<Product> findPopularProduct(Integer quantity);
     List<Product> findAll();
     List<Product> findAllByProductTypeParameters(Map<String,Object> map);
-
+    void decreaseStock(List<CartDTO> cartDTO);
+    void increaseStock(List<CartDTO> cartDTO);
 }

@@ -12,6 +12,11 @@ public class CartDTO implements Serializable {
     public CartDTO() {
     }
 
+    public CartDTO(Integer productQuantity, Integer productId) {
+        this.productQuantity = productQuantity;
+        this.productId = productId;
+    }
+
     public CartDTO(Integer productQuantity, Integer productId, String productName, String productCategory, Double productNowPrice, String productImage) {
         this.productQuantity = productQuantity;
         this.productId = productId;

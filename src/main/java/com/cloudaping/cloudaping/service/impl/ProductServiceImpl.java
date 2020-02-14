@@ -1,15 +1,18 @@
 package com.cloudaping.cloudaping.service.impl;
 
 import com.cloudaping.cloudaping.dao.ProductRepository;
+import com.cloudaping.cloudaping.dto.CartDTO;
 import com.cloudaping.cloudaping.entity.Product;
 import com.cloudaping.cloudaping.entity.productType.ProductType;
 import com.cloudaping.cloudaping.enums.ProductCategoryEnum;
+import com.cloudaping.cloudaping.enums.ResultEnum;
+import com.cloudaping.cloudaping.exception.SellException;
 import com.cloudaping.cloudaping.mapper.ProductTypeMapper;
 import com.cloudaping.cloudaping.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -87,5 +90,36 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findAllByProductTypeParameters(Map<String, Object> map) {
         return productTypeMapper.selectByTypeParams(map);
+    }
+    @Override
+    @Transactional
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO:cartDTOList
+        ) {
+            Product productInfo=productRepository.findByProductId(cartDTO.getProductId());
+            if (productInfo==null)
+                throw new SellException(ResultEnum.product_not_exist);
+            Integer result=productInfo.getProductStock()-cartDTO.getProductQuantity();
+            if(result<0)
+                throw new SellException(ResultEnum.product_stock_not_enough);
+            productInfo.setProductStock(result);
+            productRepository.save(productInfo);
+        }
+    }
+
+    @Override
+    @Transactional
+    public void increaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO:cartDTOList
+        ) {
+            Product productInfo=productRepository.findByProductId(cartDTO.getProductId());
+            if (productInfo==null)
+                throw new SellException(ResultEnum.product_not_exist);
+            Integer result=productInfo.getProductStock()+cartDTO.getProductQuantity();
+            if(result<0)
+                throw new SellException(ResultEnum.product_stock_not_enough);
+            productInfo.setProductStock(result);
+            productRepository.save(productInfo);
+        }
     }
 }

@@ -1,8 +1,5 @@
 package com.cloudaping.cloudaping.entity;
 
-import com.cloudaping.cloudaping.enums.ProductTypeEnum;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -19,11 +16,12 @@ public class Product {
     private String productImage;
     private String traderId;
     private Integer productSale;
+    private Integer productStock;
 
     public Product() {
     }
 
-    public Product(Integer productId, String productName, Integer productType, Double productOriginPrice, Double productNowPrice, Integer productQuantity, Integer productCategory, String productImage, String traderId, Integer productSale) {
+    public Product(Integer productId, String productName, Integer productType, Double productOriginPrice, Double productNowPrice, Integer productQuantity, Integer productCategory, String productImage, String traderId, Integer productSale, Integer productStock) {
         this.productId = productId;
         this.productName = productName;
         this.productType = productType;
@@ -34,6 +32,7 @@ public class Product {
         this.productImage = productImage;
         this.traderId = traderId;
         this.productSale = productSale;
+        this.productStock = productStock;
     }
 
     public Integer getProductId() {
@@ -116,6 +115,14 @@ public class Product {
         this.productSale = productSale;
     }
 
+    public Integer getProductStock() {
+        return productStock;
+    }
+
+    public void setProductStock(Integer productStock) {
+        this.productStock = productStock;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -129,6 +136,7 @@ public class Product {
                 ", productImage='" + productImage + '\'' +
                 ", traderId='" + traderId + '\'' +
                 ", productSale=" + productSale +
+                ", productStock=" + productStock +
                 '}';
     }
 }

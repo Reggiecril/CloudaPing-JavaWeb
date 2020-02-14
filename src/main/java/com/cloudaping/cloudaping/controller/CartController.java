@@ -1,7 +1,8 @@
 package com.cloudaping.cloudaping.controller;
 
 import com.cloudaping.cloudaping.dto.CartDTO;
-import com.cloudaping.cloudaping.entity.Product;
+import com.cloudaping.cloudaping.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,8 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "cart")
 public class CartController {
+    @Autowired
+    private ProductService productService;
     @GetMapping(value = {"","/"})
     public String getCart(HttpSession session,
                           Map<String,Object> map){
@@ -54,7 +57,8 @@ public class CartController {
             return 0.0;
         double total=0;
         for (int i = 0; i < cartDTOS.size(); i++) {
-            total+=(cartDTOS.get(i).getProductNowPrice()*cartDTOS.get(i).getProductQuantity());
+            double price=productService.findById(cartDTOS.get(i).getProductId()).getProductNowPrice();
+            total+=(price*cartDTOS.get(i).getProductQuantity());
         }
         return total;
     }

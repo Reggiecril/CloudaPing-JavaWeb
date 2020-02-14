@@ -30,9 +30,11 @@
                     <h3>付款方式: </h3>
                     <a href="" style="padding-left: 20px " data-toggle="modal" data-target=".checkout-payment"><i class="fa fa-plus-circle fa-2x"  aria-hidden="true"></i></a>
                 </div>
-                <select class="form-control form-control-lg">
-                    <option>请选择付款方式</option>
-                </select>
+                <#list paymentList as payment>
+                    <select class="form-control form-control-lg">!
+                        <option value="${payment.id!}">${payment.cardNumber!}</option>
+                    </select>
+                </#list>
             </div>
             <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
                 <!-- Shopping cart table -->
@@ -123,7 +125,7 @@
                             <h5 class="font-weight-bold">£${total!}</h5>
                         </li>
                     </ul>
-                    <a href="/checkout/" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                    <a href="/user/order/create" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                 </div>
             </div>
         </div>

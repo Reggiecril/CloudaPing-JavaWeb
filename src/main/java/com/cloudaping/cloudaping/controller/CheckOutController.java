@@ -2,6 +2,7 @@ package com.cloudaping.cloudaping.controller;
 
 import com.cloudaping.cloudaping.dto.CartDTO;
 import com.cloudaping.cloudaping.entity.Address;
+import com.cloudaping.cloudaping.entity.Payment;
 import com.cloudaping.cloudaping.entity.User;
 import com.cloudaping.cloudaping.enums.ProductTypeEnum;
 import com.cloudaping.cloudaping.service.ProductService;
@@ -59,7 +60,8 @@ public class CheckOutController {
         List<Address> addressList=userService.findAddressByUserId(user.getUserId());
         map.put("addressList",addressList);
         //payment
-
+        List<Payment> paymentList=userService.findPaymentByUserId(user.getUserId());
+        map.put("paymentList",paymentList);
 
         return "cart/checkout";
     }
@@ -68,7 +70,8 @@ public class CheckOutController {
             return 0.0;
         double total=0;
         for (int i = 0; i < cartDTOS.size(); i++) {
-            total+=(cartDTOS.get(i).getProductNowPrice()*cartDTOS.get(i).getProductQuantity());
+            double price=productService.findById(cartDTOS.get(i).getProductId()).getProductNowPrice();
+            total+=(price*cartDTOS.get(i).getProductQuantity());
         }
         return total;
     }

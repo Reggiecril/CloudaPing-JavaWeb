@@ -2,7 +2,6 @@ package com.cloudaping.cloudaping.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -10,9 +9,9 @@ public class OrderDetail {
     @Id
     private String detailId;
     private String orderId;
-    private String productId;
+    private Integer productId;
     private String productName;
-    private BigDecimal productPrice;
+    private Double productPrice;
     private Integer productQuantity;
     private String productIcon;
     private Date createTime;
@@ -37,11 +36,11 @@ public class OrderDetail {
         this.orderId = orderId;
     }
 
-    public String getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
@@ -53,11 +52,11 @@ public class OrderDetail {
         this.productName = productName;
     }
 
-    public BigDecimal getProductPrice() {
+    public Double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(BigDecimal productPrice) {
+    public void setProductPrice(Double productPrice) {
         this.productPrice = productPrice;
     }
 

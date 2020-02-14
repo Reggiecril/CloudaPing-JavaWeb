@@ -1,6 +1,7 @@
 package com.cloudaping.cloudaping.service;
 
 import com.cloudaping.cloudaping.entity.Address;
+import com.cloudaping.cloudaping.entity.Payment;
 import com.cloudaping.cloudaping.entity.User;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface UserService {
     void delete(String userId);
     List<Address> findAddressByUserId(String userId);
     Address saveAddress(Address address);
+    List<Payment> findPaymentByUserId(String userId)
 }

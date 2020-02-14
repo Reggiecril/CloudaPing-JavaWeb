@@ -1,10 +1,9 @@
 package com.cloudaping.cloudaping.dto;
 
-import com.reggie.sell.entity.OrderDetail;
-import com.reggie.sell.enums.OrderStatusEnum;
-import com.reggie.sell.enums.PayStatusEnum;
+import com.cloudaping.cloudaping.entity.OrderDetail;
+import com.cloudaping.cloudaping.enums.OrderStatusEnum;
+import com.cloudaping.cloudaping.enums.PayStatusEnum;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -14,8 +13,8 @@ public class OrderDTO {
     private String buyerName;
     private String buyerPhone;
     private String buyerAddress;
-    private String buyerOpenid;
-    private BigDecimal orderAmount;
+    private String buyerId;
+    private Double orderAmount;
     private Integer orderStatus= OrderStatusEnum.NEW.getCode();
     private Integer payStatus= PayStatusEnum.UNPAY.getCode();
     private Date createTime;
@@ -56,19 +55,19 @@ public class OrderDTO {
         this.buyerAddress = buyerAddress;
     }
 
-    public String getBuyerOpenid() {
-        return buyerOpenid;
+    public String getBuyerId() {
+        return buyerId;
     }
 
-    public void setBuyerOpenid(String buyerOpenid) {
-        this.buyerOpenid = buyerOpenid;
+    public void setBuyerId(String buyerOpenid) {
+        this.buyerId = buyerOpenid;
     }
 
-    public BigDecimal getOrderAmount() {
+    public Double getOrderAmount() {
         return orderAmount;
     }
 
-    public void setOrderAmount(BigDecimal orderAmount) {
+    public void setOrderAmount(Double orderAmount) {
         this.orderAmount = orderAmount;
     }
 
@@ -119,7 +118,7 @@ public class OrderDTO {
                 ", buyerName='" + buyerName + '\'' +
                 ", buyerPhone='" + buyerPhone + '\'' +
                 ", buyerAddress='" + buyerAddress + '\'' +
-                ", buyerOpenid='" + buyerOpenid + '\'' +
+                ", buyerOpenid='" + buyerId + '\'' +
                 ", orderAmount=" + orderAmount +
                 ", orderStatus=" + orderStatus +
                 ", payStatus=" + payStatus +
