@@ -1,22 +1,23 @@
-package com.reggie.sell.entity;
+package com.cloudaping.cloudaping.entity;
 
-import com.reggie.sell.enums.OrderStatusEnum;
-import com.reggie.sell.enums.PayStatusEnum;
+import com.cloudaping.cloudaping.enums.OrderStatusEnum;
+import com.cloudaping.cloudaping.enums.PayStatusEnum;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
+
 @Entity
 @DynamicUpdate
 public class OrderMaster {
     @Id
     private String orderId;
-    private String buyerName;
+    private String buyerEmail;
     private String buyerPhone;
     private String buyerAddress;
-    private String buyerOpenid;
+    private String buyerId;
     private BigDecimal orderAmount;
     private Integer orderStatus= OrderStatusEnum.NEW.getCode();
     private Integer payStatus= PayStatusEnum.UNPAY.getCode();
@@ -34,12 +35,20 @@ public class OrderMaster {
         this.orderId = orderId;
     }
 
-    public String getBuyerName() {
-        return buyerName;
+    public String getBuyerEmail() {
+        return buyerEmail;
     }
 
-    public void setBuyerName(String buyerName) {
-        this.buyerName = buyerName;
+    public void setBuyerEmail(String buyerEmail) {
+        this.buyerEmail = buyerEmail;
+    }
+
+    public String getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(String buyerId) {
+        this.buyerId = buyerId;
     }
 
     public String getBuyerPhone() {
@@ -58,13 +67,7 @@ public class OrderMaster {
         this.buyerAddress = buyerAddress;
     }
 
-    public String getBuyerOpenid() {
-        return buyerOpenid;
-    }
 
-    public void setBuyerOpenid(String buyerOpenid) {
-        this.buyerOpenid = buyerOpenid;
-    }
 
     public BigDecimal getOrderAmount() {
         return orderAmount;
@@ -110,10 +113,10 @@ public class OrderMaster {
     public String toString() {
         return "OrderMaster{" +
                 "orderId='" + orderId + '\'' +
-                ", buyerName='" + buyerName + '\'' +
+                ", buyerEmail='" + buyerEmail + '\'' +
                 ", buyerPhone='" + buyerPhone + '\'' +
                 ", buyerAddress='" + buyerAddress + '\'' +
-                ", buyerOpenid='" + buyerOpenid + '\'' +
+                ", buyerId='" + buyerId + '\'' +
                 ", orderAmount=" + orderAmount +
                 ", orderStatus=" + orderStatus +
                 ", payStatus=" + payStatus +

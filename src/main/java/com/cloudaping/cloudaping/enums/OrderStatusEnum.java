@@ -1,4 +1,4 @@
-package com.reggie.sell.enums;
+package com.cloudaping.cloudaping.enums;
 
 public enum OrderStatusEnum {
     NEW(0,"新订单"),

@@ -1,4 +1,4 @@
-package com.reggie.sell.enums;
+package com.cloudaping.cloudaping.enums;
 
 public enum  PayStatusEnum {
     UNPAY(0,"未支付"),

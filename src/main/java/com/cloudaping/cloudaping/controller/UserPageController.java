@@ -1,16 +1,13 @@
 package com.cloudaping.cloudaping.controller;
 
 import com.cloudaping.cloudaping.entity.User;
-import com.cloudaping.cloudaping.service.LoginService;
-import freemarker.template.utility.DateUtil;
+import com.cloudaping.cloudaping.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -24,7 +21,7 @@ public class UserPageController {
     private static final String FAVOURITE_PATH = USERPAGE_PATH + "/favourite";
     private static final String PASSWORD_CHANGE_PATH = USERPAGE_PATH + "/password_change";
 @Autowired
-    private LoginService loginService;
+    private UserService userService;
     @GetMapping(path = "information")
     public String getInformation(HttpSession session,
                                  Map<String,Object> map) {
@@ -41,7 +38,7 @@ public class UserPageController {
         user.setUserId(exsitsUser.getUserId());
         user.setPassword(exsitsUser.getPassword());
         session.setAttribute("user",user);
-        user=loginService.save(user);
+        user= userService.save(user);
         map.put("user",user);
         return INFORMATION_PATH;
     }

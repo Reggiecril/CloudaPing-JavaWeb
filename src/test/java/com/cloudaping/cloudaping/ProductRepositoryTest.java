@@ -5,6 +5,7 @@ import com.cloudaping.cloudaping.entity.Product;
 import com.cloudaping.cloudaping.entity.productType.Laptop;
 import com.cloudaping.cloudaping.entity.productType.ProductType;
 import com.cloudaping.cloudaping.mapper.ProductTypeMapper;
+import com.cloudaping.cloudaping.utils.KeyUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,6 +39,7 @@ public class ProductRepositoryTest {
     }
     @Test
     public void user(){
-
+        System.out.println(KeyUtil.getOrderKey());
     }
+
 }

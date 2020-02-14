@@ -2,7 +2,7 @@ package com.cloudaping.cloudaping.controller;
 
 import com.cloudaping.cloudaping.entity.User;
 import com.cloudaping.cloudaping.enums.LoginEnum;
-import com.cloudaping.cloudaping.service.LoginService;
+import com.cloudaping.cloudaping.service.UserService;
 import com.cloudaping.cloudaping.utils.KeyUtil;
 import com.cloudaping.cloudaping.utils.Verification;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Enumeration;
 import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/user/")
 public class LoginController {
     @Autowired
-    private LoginService loginService;
+    private UserService userService;
 
     private static final String PATH_LOGIN="login/login";
     private static final String PATH_SIGNUP="login/signup";
@@ -34,8 +33,8 @@ public class LoginController {
     @GetMapping(path = "login")
     public String getLogin(HttpSession session){
 
-
-        if (session.getAttributeNames().hasMoreElements()){
+        User user= (User) session.getAttribute("user");
+        if (user!=null){
             return "redirect:"+PATH_USER;
         }
         return PATH_LOGIN;
@@ -56,7 +55,7 @@ public class LoginController {
             map.put("errMsg",LoginEnum.email_wrong_type.getMessage());
             return PATH_LOGIN;
         }
-        User user=loginService.findByEmail(email);
+        User user= userService.findByEmail(email);
         //邮箱为空
         if (user==null||user.getEmail()==null){
             map.put("errMsg", LoginEnum.email_not_found.getMessage());
@@ -106,14 +105,14 @@ public class LoginController {
             return PATH_SIGNUP;
 
         }
-       User existsUser=loginService.findByEmail(email);
+       User existsUser= userService.findByEmail(email);
         if (existsUser!=null)
         {
             map.put("errMsg",LoginEnum.exists_user.getMessage());
             return PATH_SIGNUP;
         }
         User user=new User(KeyUtil.getUniqueKey(),email,"",password);
-        User afterUser=loginService.save(user);
+        User afterUser= userService.save(user);
         if (afterUser==null){
             map.put("errMsg",LoginEnum.fail_create_user.getMessage());
             return PATH_SIGNUP;

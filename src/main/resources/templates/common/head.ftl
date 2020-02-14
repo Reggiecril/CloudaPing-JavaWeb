@@ -6,7 +6,7 @@
     <#assign path=springMacroRequestContext.getContextPath()+"/static"/>
     <link href="${path}/images/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="${path}/css/bootstrap.min.css">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="${path}/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->

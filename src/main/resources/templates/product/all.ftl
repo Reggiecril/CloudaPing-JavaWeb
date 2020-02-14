@@ -11,6 +11,35 @@
 <body>
 <#include "../common/search.ftl">
 <#include "../common/product-nav.ftl">
+<#assign urlPath="/product/all">
+<div class="product-category-title" style="width:1280px;margin: 0 auto">
+    <div class="product-category-title-content">
+        <div class="product-category-title-first"><a href="/product/all">All</a></div>
+        <#if RequestParameters["type"]??>
+            <#assign urlPath=urlPath+"?type="+RequestParameters["type"]>
+
+            <div class="product-category-title-sign">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="product-category-title-first">
+                <a href="${urlPath}">${RequestParameters["type"]}</a>
+            </div>
+            <#if productPath??>
+                <#list productPath?keys as key>
+                    <#assign urlPath=urlPath+"&"+key+"="+productPath[key]>
+
+                    <div class="product-category-title-sign">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="product-category-title-last">
+                        <a href="${urlPath}">${productPath[key]}</a>
+                    </div>
+                </#list>
+            </#if>
+        </#if>
+    </div>
+</div>
 <div class="product-content">
     <div class="product-right">
         <div class="product-rank-title">Popular Goods</div>
@@ -235,7 +264,7 @@
         <div class="product-goods">
             <#list productList as p>
                 <div class="product-goods-item">
-                    <a href="/item?id=${p.productId+urlPath?replace("/product/all","")?replace("?","&")}"><img src="${path}/productImages/${p.productImage}" alt="log" width="220" height="220"></a>
+                    <a href="/item?id=${p.productId}"><img src="${path}/productImages/${p.productImage}" alt="log" width="220" height="220"></a>
                     <div class="product-goods-price">
                         <p>£${p.productNowPrice}</p>
                     </div>
@@ -243,7 +272,7 @@
                         <p>${p.productSale}</p>
                     </div>
                     <div class="product-goods-name">
-                        <a href="/item?${urlPath?replace("/product/all","")?replace("?","&")}&id=${p.productId}">${p.productName}</a>
+                        <a href="/item?id=${p.productId}">${p.productName}</a>
                     </div>
                     <div class="product-goods-trader">
                         <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i>${p.traderId}</a>

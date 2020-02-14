@@ -1,4 +1,4 @@
-package com.reggie.sell.entity;
+package com.cloudaping.cloudaping.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

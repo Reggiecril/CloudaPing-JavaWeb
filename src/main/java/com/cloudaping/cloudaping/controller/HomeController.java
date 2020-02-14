@@ -9,6 +9,7 @@ import com.cloudaping.cloudaping.utils.ConvertDuplicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -21,7 +22,7 @@ import java.util.Set;
 public class HomeController{
     @Autowired
     private ProductService productService;
-    @RequestMapping({"/index","/"})
+    @GetMapping({"/index","/"})
     public String index(Map<String,Object> map, HttpSession session){
         User user = (User) session.getAttribute("user");
         if (user!=null){

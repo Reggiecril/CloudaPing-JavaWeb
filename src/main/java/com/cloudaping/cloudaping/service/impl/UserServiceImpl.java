@@ -1,15 +1,22 @@
 package com.cloudaping.cloudaping.service.impl;
 
+import com.cloudaping.cloudaping.dao.AddressRepository;
 import com.cloudaping.cloudaping.dao.LoginRepository;
+import com.cloudaping.cloudaping.entity.Address;
 import com.cloudaping.cloudaping.entity.User;
-import com.cloudaping.cloudaping.service.LoginService;
+import com.cloudaping.cloudaping.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
 @Service
-public class LoginServiceImpl implements LoginService {
+public class UserServiceImpl implements UserService {
     @Autowired
     private LoginRepository loginRepository;
+    @Autowired
+    private AddressRepository addressRepository;
     @Override
     @Transactional
     public User save(User user) {
@@ -37,5 +44,15 @@ public class LoginServiceImpl implements LoginService {
     @Transactional
     public void delete(String userId) {
         loginRepository.deleteByUserId(userId);
+    }
+
+    @Override
+    public List<Address> findAddressByUserId(String userId) {
+        return addressRepository.findAllByUserId(userId);
+    }
+
+    @Override
+    public Address saveAddress(Address address) {
+        return addressRepository.save(address);
     }
 }

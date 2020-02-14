@@ -225,36 +225,4 @@
         <li><a href="/">Home</a></li>
     </div>
 </div>
-<#assign urlPath="/product/all">
-<div class="product-category-title" style="width:1280px;margin: 0 auto">
-    <div class="product-category-title-content">
-        <div class="product-category-title-first"><a href="/product/all">All</a></div>
-        <#if RequestParameters["type"]??>
-            <#assign urlPath=urlPath+"?type="+RequestParameters["type"]>
 
-            <div class="product-category-title-sign">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </div>
-
-            <div class="product-category-title-first">
-                <a href="${urlPath}">${RequestParameters["type"]}</a>
-            </div>
-            <#if productPath??>
-            <#-- 参数-->
-
-                <#list productPath?keys as key>
-                    <#assign urlPath=urlPath+"&"+key+"="+productPath[key]>
-
-                    <div class="product-category-title-sign">
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                    </div>
-                    <div class="product-category-title-last">
-                        <a href="${urlPath}">${productPath[key]}</a>
-                    </div>
-                </#list>
-            </#if>
-        </#if>
-
-
-    </div>
-</div>

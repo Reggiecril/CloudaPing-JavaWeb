@@ -17,7 +17,15 @@ public enum ProductTypeEnum {
         this.typeCode = typeCode;
         this.translatedType = translatedType;
     }
-
+    public static String getValue(Integer value) {
+        ProductTypeEnum[] productTypeEnums = values();
+        for (ProductTypeEnum productTypeEnum : productTypeEnums) {
+            if (productTypeEnum.getType().equals(value)) {
+                return productTypeEnum.getTranslatedType();
+            }
+        }
+        return null;
+    }
     public Integer getType() {
         return typeCode;
     }

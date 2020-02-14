@@ -1,11 +1,10 @@
-package com.reggie.sell.dao;
+package com.cloudaping.cloudaping.dao;
 
-import com.reggie.sell.entity.OrderMaster;
-
+import com.cloudaping.cloudaping.entity.OrderMaster;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderMasterRepository extends JpaRepository<OrderMaster,String> {
-    Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
+public interface OrderMasterRepository extends JpaRepository<OrderMaster, String> {
+    Page<OrderMaster> findByBuyerId(String userId, Pageable pageable);
 }

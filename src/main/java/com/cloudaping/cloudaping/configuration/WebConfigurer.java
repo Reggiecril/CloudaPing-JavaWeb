@@ -25,6 +25,9 @@ public class WebConfigurer implements WebMvcConfigurer {
         InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
         // 拦截路径
         loginRegistry.addPathPatterns("/userPage/**");
+//
+        loginRegistry.addPathPatterns("/checkout/**");
+
 
 
     }

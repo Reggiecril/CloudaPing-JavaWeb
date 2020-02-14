@@ -338,10 +338,10 @@
                 <#list categoryMap[categoryKey] as category>
                     <div class="home-rank-item">
                         <div class="home-rank-item-image">
-                            <a href=""> <img src="${path}/productImages/${category.productImage}"/></a>
+                            <a href="/item?id=${category.productId}"> <img src="${path}/productImages/${category.productImage}"/></a>
                         </div>
                         <div class="home-rank-item-product">
-                            <a>${category.productName}</a>
+                            <a href="/item?id=${category.productId}">${category.productName}</a>
                         </div>
                         <div class="home-rank-item-price">
                             <p>£${category.productNowPrice}</p>

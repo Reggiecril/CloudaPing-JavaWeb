@@ -87,16 +87,14 @@ $(function(){
 $(function(){  
     $(".add").click(function(){  
     var t=$(this).parent().find('input[name*=item-category-quantity]');  
-        t.val(parseInt(t.val())+1)  
-        setTotal();  
+        t.val(parseInt(t.val())+1)
     })  
     $(".min").click(function(){  
         var t=$(this).parent().find('input[name*=item-category-quantity]');  
         t.val(parseInt(t.val())-1)  
         if(parseInt(t.val())<0){  
         t.val(0);  
-        }  
-        setTotal();  
+        }
     }) 
       
 })  

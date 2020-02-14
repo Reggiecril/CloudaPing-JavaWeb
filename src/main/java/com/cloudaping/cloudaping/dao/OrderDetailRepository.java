@@ -1,13 +1,10 @@
-package com.reggie.sell.dao;
+package com.cloudaping.cloudaping.dao;
 
-import com.reggie.sell.entity.OrderDetail;
-import com.reggie.sell.entity.OrderMaster;
-import org.springframework.data.domain.Page;
+import com.cloudaping.cloudaping.entity.OrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
-public interface OrderDetailRepository extends JpaRepository<OrderDetail,String> {
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, String> {
     List<OrderDetail> findByOrderId(String orderId);
 }

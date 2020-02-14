@@ -7,7 +7,7 @@
                     <a href='/'><img src='${path}/images/log.png' width="250px" height="60px" alt='log'></a>
                 </div>
                 <div class="col-md-8" style="display: inline-block;margin-top: 10px ">
-                    <form action='index.php?content=sections/search' method='post'>
+                    <form action='/index' method='post'>
                         <input type='text' name='searchText' height='40'>
                         <select name='searchSelect'>
                             <option selected='selected' value='All'>All</option>
@@ -22,12 +22,11 @@
                         <input type='submit' name='searchSubmit' value='Search'>
                         <div class='header-popular'>
                             <p>Popular search:</p>
-                            <a href='index.php?content=mainPages/product&product=laptop'>Laptop</a>
-                            <a href='index.php?content=mainPages/product&product=mobile'>Mobile</a>
-                            <a href='index.php?content=mainPages/product&product=computer'>Computer</a>
-                            <a href='index.php?content=mainPages/product&product=camera'>Camera</a>
-                            <a href='index.php?content=mainPages/product&product=X-Box'>X-Box</a>
-                            <a href='index.php?content=mainPages/product&product=headset'>Headset</a>
+                            <a href='/product/all?type=laptop'>Laptop</a>
+                            <a href='/product/all?type=mobile'>Mobile</a>
+                            <a href='/product/all?type=computer'>Computer</a>
+                            <a href='/product/all?type=camera'>Camera</a>
+                            <a href='/product/all?type=audiovideo'>AudioVideo</a>
                         </div>
                     </form>
                 </div>

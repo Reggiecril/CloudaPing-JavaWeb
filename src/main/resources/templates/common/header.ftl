@@ -11,6 +11,9 @@
         </div>
         <div class='col-md-3'>
             <div style="text-align: right">
+                <#if cart??>
+                    <a href="/cart/">购物车(${cart?size}) |</a>
+                </#if>
                 <a href='/product/all'>所有商品 | </a>
 
                 <a href='/order/my'>订单 | </a>
